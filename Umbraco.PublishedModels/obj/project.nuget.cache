@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "noMyoPoD+3myzfwo6fJRaeUYxYkUn5CfC5tMsqexwGzmkVUi5LZoybl6YwgWDqACYD8feNgS4Fc/3YeTVIxEkQ==",
+  "dgSpecHash": "e/tbd/O9J+DmQSyn5gV557csVJussDeR75y9NHNdRPW/RLQgnafI6fEIgUAms6Qm0b4kg32ECEops6S3zX3vSA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Lookers EV\\Umbraco.PublishedModels\\Umbraco.PublishedModels.csproj",
+  "projectFilePath": "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Umbraco.PublishedModels\\Umbraco.PublishedModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tim\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\tim\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",

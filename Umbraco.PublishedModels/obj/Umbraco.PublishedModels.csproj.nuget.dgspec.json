@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Lookers EV\\Umbraco.PublishedModels\\Umbraco.PublishedModels.csproj": {}
+    "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Umbraco.PublishedModels\\Umbraco.PublishedModels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Lookers EV\\Umbraco.PublishedModels\\Umbraco.PublishedModels.csproj": {
+    "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Umbraco.PublishedModels\\Umbraco.PublishedModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Lookers EV\\Umbraco.PublishedModels\\Umbraco.PublishedModels.csproj",
+        "projectUniqueName": "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Umbraco.PublishedModels\\Umbraco.PublishedModels.csproj",
         "projectName": "Umbraco.PublishedModels",
-        "projectPath": "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Lookers EV\\Umbraco.PublishedModels\\Umbraco.PublishedModels.csproj",
+        "projectPath": "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Umbraco.PublishedModels\\Umbraco.PublishedModels.csproj",
         "packagesPath": "C:\\Users\\tim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Lookers EV\\Umbraco.PublishedModels\\obj\\",
+        "outputPath": "C:\\Users\\tim\\OneDrive - The Works\\Documents\\GitHub\\lookerstouch\\Umbraco.PublishedModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tim\\AppData\\Roaming\\NuGet\\NuGet.Config",
