@@ -1,0 +1,8 @@
+<div ng-controller="UmbracoForms.SettingTypes.RangeController as vm" class="umb-forms-setting-type-range" data-umb-setting-alias="{{setting.alias}}">
+  <umb-range-slider ng-model="vm.value"
+                    options="vm.sliderOptions"
+                    on-change="vm.change(values)"
+                    on-set="vm.change(values)"
+                    ng-attr-readonly="{{setting.isReadOnly || undefined}}">
+  </umb-range-slider>
+</div>

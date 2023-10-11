@@ -1,0 +1,19 @@
+<div class="umb-pane" ng-controller="UmbracoForms.Editors.PreValueSource.DeleteController">
+  <p>
+    <localize key="@formPrevalueSources_deleteConfirm" tokens="[currentNode.name]"></localize>
+  </p>
+
+  <div>
+    <div class="umb-pane btn-toolbar umb-btn-toolbar">
+      <div class="control-group umb-control-group">
+        <a href="" class="btn btn-link" ng-click="cancelDelete()"><localize key="general_cancel">Cancel</localize></a>
+
+        <umb-button action="delete(currentNode.id)"
+                    type="button"
+                    button-style="danger"
+                    label="OK">
+        </umb-button>
+      </div>
+    </div>
+  </div>
+</div>

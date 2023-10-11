@@ -1,0 +1,235 @@
+<div ng-controller="UmbracoForms.Editors.Form.FormSettingsController as vm" class="umb-forms-settings">
+  <umb-box>
+    <umb-box-content class="form-horizontal">
+
+      <umb-control-group localize="label,description"
+                         label="@formSettings_storeRecords"
+                         description="@formSettings_storeRecordsDescription">
+        <umb-checkbox model="model.storeRecordsLocally"
+                      label-key="formSettings_storeRecordsConfirm">
+        </umb-checkbox>
+      </umb-control-group>
+
+      <!--Captions-->
+      <umb-control-group localize="label,description"
+                         label="@formSettings_captions"
+                         description="@formSettings_captionsDescription">
+        <div class="control-row -margin-bottom">
+          <label class="control-label -block"><localize key="formSettings_captionSubmitButton"></localize></label>
+          <input class="-full-width-input" type="text" ng-model="model.submitLabel" />
+        </div>
+        <div class="control-row -margin-bottom">
+          <label class="control-label -block"><localize key="formSettings_captionNextButton"></localize></label>
+          <input class="-full-width-input" type="text" ng-model="model.nextLabel" />
+        </div>
+        <div class="control-row -margin-bottom">
+          <label class="control-label -block"><localize key="formSettings_captionPreviousButton"></localize></label>
+          <input class="-full-width-input" type="text" ng-model="model.prevLabel" />
+        </div>
+      </umb-control-group>
+
+      <!--Styling-->
+      <umb-control-group localize="label,description"
+                         label="@formSettings_styling"
+                         description="@formSettings_stylingDescription">
+        <div class="control-row -margin-bottom">
+          <label class="control-label -block"><localize key="formSettings_formCssClass"></localize></label>
+          <input class="-full-width-input" type="text" ng-model="model.cssClass" />
+        </div>
+        <div class="control-row">
+          <umb-checkbox model="model.disableDefaultStylesheet"
+                        label-key="@formSettings_disableDefaultStylesheet">
+          </umb-checkbox>
+        </div>
+      </umb-control-group>
+
+      <!--Validation-->
+      <umb-control-group localize="label,description"
+                         label="@formSettings_validation"
+                         description="@formSettings_validationDescription">
+        <div class="block-form">
+          <div>
+            <label class="control-label"><localize key="formSettings_mandatoryErrorMessage"></localize></label>
+            <small><localize key="formSettings_mandatoryErrorMessageDescription"></localize></small>
+            <input class="-full-width-input" type="text" ng-model="model.requiredErrorMessage" />
+          </div>
+          <br />
+          <div>
+            <label class="control-label -block"><localize key="formSettings_invalidErrorMessage"></localize></label>
+            <small><localize key="formSettings_invalidErrorMessageDescription"></localize></small>
+            <input class="-full-width-input" type="text" ng-model="model.invalidErrorMessage" />
+          </div>
+          <div class="control-row">
+            <umb-checkbox model="model.showValidationSummary"
+                          label-key="@formSettings_showValidationSummary">
+            </umb-checkbox>
+          </div>
+          <div class="control-row">
+            <umb-checkbox model="model.hideFieldValidation"
+                          label-key="@formSettings_hideFieldValidationLabels">
+            </umb-checkbox>
+          </div>
+          <hr />
+          <div class="control-row">
+            <label class="control-label -block"><localize key="formSettings_markFields"></localize></label>
+            <umb-radiobutton value="NoIndicator"
+                             model="model.fieldIndicationType"
+                             label-key="@formSettings_markFieldsNoIndicator">
+            </umb-radiobutton>
+            <umb-radiobutton value="MarkMandatoryFields"
+                             model="model.fieldIndicationType"
+                             label-key="@formSettings_markMandatoryFields">
+            </umb-radiobutton>
+            <umb-radiobutton value="MarkOptionalFields"
+                             model="model.fieldIndicationType"
+                             label-key="@formSettings_markOptionalFields">
+            </umb-radiobutton>
+          </div>
+          <br />
+          <div>
+            <label class="control-label -block"><localize key="formSettings_indicator"></localize></label>
+            <small><localize key="formSettings_changeIndicatorSymbol"></localize></small>
+            <input class="-full-width-input" type="text" ng-model="model.indicator" />
+          </div>
+        </div>
+      </umb-control-group>
+
+      <!--Autocomplete-->
+      <umb-control-group localize="label,description"
+                         label="@formSettings_autocomplete"
+                         description="@formSettings_autocompleteDescription">
+        <div class="block-form">
+          <div class="control-row">
+            <label class="control-label -block">Attribute value</label>
+            <umb-radiobutton value=""
+                             model="model.autocompleteAttribute"
+                             label-key="@formSettings_autocompleteNone">
+            </umb-radiobutton>
+            <umb-radiobutton value="on"
+                             model="model.autocompleteAttribute"
+                             label-key="@formSettings_autocompleteOn">
+            </umb-radiobutton>
+            <umb-radiobutton value="off"
+                             model="model.autocompleteAttribute"
+                             label-key="@formSettings_autocompleteOff">
+            </umb-radiobutton>
+          </div>
+        </div>
+      </umb-control-group>
+
+      <!--Moderation-->
+      <umb-control-group localize="label,description"
+                         label="@formSettings_moderation"
+                         description="@formSettings_moderationDescription">
+        <label><localize key="formSettings_enablePostModeration"></localize></label>
+        <umb-toggle checked="model.manualApproval"
+                    on-click="model.manualApproval = !model.manualApproval">
+        </umb-toggle>
+      </umb-control-group>
+
+      <!--Fields display-->
+      <umb-control-group ng-show="model.storeRecordsLocally"
+                         localize="label,description"
+                         label="@formSettings_fieldsDisplayed"
+                         description="@formSettings_fieldsDisplayedDescription">
+        <div class="control-row -margin-bottom">
+          <label><localize key="formSettings_displayDefaultFields"></localize></label>
+          <umb-toggle checked="model.displayDefaultFields"
+                      on-click="vm.toggleDisplayDefaultFields()">
+          </umb-toggle>
+          <div class="umb-forms-settings-toggle-detail" ng-show="model.displayDefaultFields">
+            <small><localize key="formSettings_displayDefaultFieldsDescription"></localize></small>
+          </div>
+          <div class="umb-forms-settings-toggle-detail" ng-show="!model.displayDefaultFields">
+            <div class="umb-forms-settings-toggle-detail-select-fields">
+              <select ng-model="vm.displayFieldToAdd">
+                <option value=""></option>
+                <optgroup localize="label" label="@formSettings_formFields">
+                  <option ng-repeat="field in vm.formFields" value="{{field.alias}}" ng-show="!vm.hasDisplayField(field.alias, false)">{{field.caption}}</option>
+                </optgroup>
+                <optgroup localize="label" label="@formSettings_systemFields">
+                  <option ng-repeat="field in vm.systemFields" value="_system_{{field.alias}}" ng-show="!vm.hasDisplayField(field.alias, true)">{{field.caption}}</option>
+                </optgroup>
+              </select>
+              <button type="button" role="button" class="btn" ng-click="vm.addDisplayField()">
+                <localize key="general_add">Add</localize>
+              </button>
+            </div>
+
+            <p ng-show="vm.selectedDisplayFields.length === 0"><small><localize key="formSettings_noSelectedDisplayFields"></localize></small></p>
+
+            <table class="table" ng-show="vm.selectedDisplayFields.length > 0">
+              <thead>
+                <tr>
+                  <td></td>
+                  <th><localize key="general_alias"></localize></th>
+                  <th><localize key="general_header"></localize></th>
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody ui-sortable="vm.selectedDisplayFieldsSortableOptions" ng-model="vm.selectedDisplayFields">
+                <tr ng-repeat="field in vm.selectedDisplayFields">
+                  <td>
+                    <umb-icon icon="icon-navigation" class="icon handle" aria-label="Sort"></umb-icon>
+                  </td>
+                  <td>
+                    <div class="list-view-layout__name flex-column content-start">
+                      <span class="list-view-layout__name-text" ng-bind="field.alias"></span>
+                      <span class="list-view-layout__system" ng-show="field.isSystem == 1">(<localize key="general_systemField"></localize>)</span>
+                    </div>
+                  </td>
+                  <td>
+                    <ng-form name="headerForm" ng-if="!field.isSystem">
+                      <input type="text" name="header" ng-model="field.caption" ng-required="true" ng-change="vm.refreshSelectedDisplayFieldsInModel()" />
+                    </ng-form>
+                    <span ng-if="field.isSystem">{{field.caption}}</span>
+                  </td>
+                  <td>
+                    <button type="button" class="umb-node-preview__action umb-node-preview__action--red" ng-click="vm.removeDisplayField(field)">
+                      <localize key="general_remove">Remove</localize><span class="sr-only"> {{field.caption}}</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </umb-control-group>
+
+      <!--Data retention-->
+      <umb-control-group ng-show="model.storeRecordsLocally"
+                         localize="label,description"
+                         label="@formSettings_dataRetention"
+                         description="@formSettings_dataRetentionDescription">
+        <div ng-if="!vm.scheduledRecordDeletionEnabled" class="umb-panel-group__details-status-text umb-alert umb-alert--info mb3 ng-scope">
+          <p class="mb0">
+            <localize key="formSettings_scheduledRecordDeletionNotEnabled"></localize>
+          </p>
+        </div>
+        <div class="control-row -margin-bottom">
+          <label><localize key="formSettings_dataRetentionRetainSubmittedRecords"></localize></label>
+          <umb-toggle checked="!vm.showDaysToRetainSubmittedRecords"
+                      on-click="vm.toggleRetain('Submitted')">
+          </umb-toggle>
+          <div class="umb-forms-settings-toggle-detail" ng-show="vm.showDaysToRetainSubmittedRecords">
+            <label class="control-label -block"><localize key="formSettings_dataRetentionForSubmittedRecords"></localize></label>
+            <input type="number" min="0" ng-model="model.daysToRetainSubmittedRecordsFor" />
+          </div>
+        </div>
+        <br />
+        <div class="control-row -margin-bottom">
+          <label><localize key="formSettings_dataRetentionRetainApprovedRecords"></localize></label>
+          <umb-toggle checked="!vm.showDaysToRetainApprovedRecords"
+                      on-click="vm.toggleRetain('Approved')">
+          </umb-toggle>
+          <div class="umb-forms-settings-toggle-detail" ng-show="vm.showDaysToRetainApprovedRecords">
+            <label class="control-label -block"><localize key="formSettings_dataRetentionForApprovedRecords"></localize></label>
+            <input type="number" min="0" ng-model="model.daysToRetainApprovedRecordsFor" />
+          </div>
+        </div>
+
+      </umb-control-group>
+
+    </umb-box-content>
+  </umb-box>
+</div>

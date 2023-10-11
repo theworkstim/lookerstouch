@@ -1,0 +1,102 @@
+﻿@import "../global/variables";
+
+.modal {
+    &.video-modal {
+        .modal-header {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: transparent;
+            z-index: 10;
+        }
+    }
+
+    .modal-content {
+        background: $clr-purple;
+        border-radius: $border-radius-large;
+
+        .modal-header {
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: none;
+            padding: 1rem 2rem 1rem;
+
+            .btn-close-wrapper {
+                background: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 3rem;
+                width: 3rem;
+
+                .btn-close {
+                    $btn-close-width: 3rem;
+                    $btn-close-height: 3rem;
+                    $btn-close-padding-x: .25em;
+                    $btn-close-padding-y: $btn-close-padding-x;
+                    $btn-close-color: black;
+                    $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>");
+                    $btn-close-focus-shadow: none;
+                    $btn-close-opacity: 1;
+                    $btn-close-hover-opacity: 1;
+                    $btn-close-focus-opacity: 1;
+                    $btn-close-disabled-opacity: 1;
+                    $btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
+                    opacity: 1;
+                    margin: 0;
+                }
+            }
+        }
+
+        .modal-body {
+            color: white;
+            padding: 0 2rem 2rem;
+
+            .modal-title {
+                color: $clr-blue-light;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            p {
+                font-size: 1.25rem;
+            }
+
+            &.video-wrapper {
+                overflow: hidden;
+                width: 100%;
+                aspect-ratio: 16/9;
+                pointer-events: none;
+                position: relative;
+
+                iframe {
+                    width: 300%;
+                    height: 100%;
+                    margin-left: -100%;
+                }
+            }
+        }
+
+        .modal-footer {
+            border-top: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0.75rem;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: white;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: $clr-purple-dark;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: $clr-purple-dark;
+        }
+    }
+}
+

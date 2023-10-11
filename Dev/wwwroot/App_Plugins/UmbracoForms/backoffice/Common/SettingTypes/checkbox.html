@@ -1,0 +1,7 @@
+<div ng-controller="UmbracoForms.SettingTypes.Pickers.CheckboxController as vm" data-umb-setting-alias="{{setting.alias}}">
+	<umb-toggle
+			checked="vm.checked"
+			on-click="vm.toggle()"
+			ng-attr-readonly="{{setting.isReadOnly || undefined}}">
+	</umb-toggle>
+</div>

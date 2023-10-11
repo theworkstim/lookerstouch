@@ -1,0 +1,86 @@
+﻿@import "../global/variables";
+
+#home {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    /*align-items: center;*/
+    justify-content: center;
+    position: relative;
+    /*&:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $clr-purple;
+        opacity: 0.5;
+        z-index: 2;
+    }*/
+
+    .logo {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+        z-index: 3;
+        width: 12rem;
+    }
+
+    .icon {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 3;
+    }
+
+    #main-image {
+        opacity: 0;
+        transform: translateY(-48px);
+    }
+
+    #main-btn {
+        opacity: 0;
+        transform: translateY(48px);
+    }
+
+    .main-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+
+        h1 {
+            color: white;
+            font-size: 10rem;
+            font-weight: normal;
+            margin: 2rem 0;
+
+            span {
+                &.yellow {
+                    color: $clr-yellow;
+                }
+            }
+        }
+
+        .go-electric-svg {
+            max-width: 40rem;
+            margin: 14rem 4rem 4rem;
+        }
+    }
+
+    .contact-link {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        z-index: 3;
+    }
+
+    .bg-svg {
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+        z-index: 3;
+    }
+}

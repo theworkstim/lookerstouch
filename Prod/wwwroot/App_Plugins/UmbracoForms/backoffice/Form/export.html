@@ -1,0 +1,17 @@
+<div class="umb-dialog" ng-controller="UmbracoForms.Editors.Form.ExportController as vm">
+  <div class="umb-dialog-body with-footer">
+    <div class="umb-pane">
+      <p>
+        <localize key="formExport_exportInstruction"></localize>
+      </p>
+    </div>
+  </div>
+  <div class="umb-dialog-footer btn-toolbar umb-btn-toolbar">
+    <button type="button" class="btn btn-link" ng-click="vm.cancel()">
+      <localize key="general_cancel">Cancel</localize>
+    </button>
+    <button class="btn btn-primary" ng-click="vm.exportForm()">
+      <localize key="actions_export">Export</localize>
+    </button>
+  </div>
+</div>
