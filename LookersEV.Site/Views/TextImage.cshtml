@@ -1,0 +1,41 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.TextImage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models;
+
+@{
+    if (Model == null)
+        return;
+
+    string imagesClass = (Model.Images?.Any() ?? false) ? "" : "no-images";
+
+    <main id="text-image" class="main" role="main">
+        <div class="content-col @imagesClass">
+            <img class="logo" src="/images/logo.svg">
+            <a href="@Model.Parent.Url()" class="btn-back">
+                <img src="/images/icons/back-arrow.svg" />
+            </a>
+            <div class="content">
+                @if (!string.IsNullOrWhiteSpace(Model.Title))
+                {
+                    <h1>@Model.Title</h1>
+                }
+
+                <div class="body-text">
+                    @Html.Raw(Model.BodyText)
+                </div>
+            </div>
+        </div>
+        @if (Model.Images?.Any() ?? false)
+        {
+            <div class="image-col">
+                <div class="image-grid images-@Model.Images.Count()">
+                    @foreach (MediaWithCrops image in Model.Images)
+                    {
+                        <img src="@image.Url()">
+                    }
+                </div>
+            </div>
+        }
+    </main>
+}

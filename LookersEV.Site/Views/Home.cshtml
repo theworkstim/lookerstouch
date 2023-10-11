@@ -1,0 +1,34 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{
+    <main id="home" class="main bg-main" role="main">
+        <img class="logo" src="/images/logo.svg">
+        <img class="icon" src="/images/icons/know-how-electric.svg">
+        <div class="main-content-wrapper">
+            <!--<h1>Go <span class="yellow italic">Electric</span></h1>-->
+            <img id="main-image" class="go-electric-svg" src="/images/go-electric.svg">
+
+            @if (Model.Button?.Any() ?? false)
+            {
+                foreach (BlockListItem block in Model.Button) 
+                {
+                    LinkItm linkItm = block.Content as LinkItm;
+
+                    if (linkItm != null) 
+                    {
+                        <a href="@linkItm.Link?.Url()" id="main-btn" class="btn btn-lg btn-gradient">
+                            @linkItm.Text
+                        </a>
+                    }
+                }
+            }
+        </div>
+        @*<div class="contact-link">
+            <img src="images/icons/speech-bubble.svg" />
+        </div>*@
+        <img class="bg-svg" src="/images/waves.svg">
+    </main>
+}

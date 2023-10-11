@@ -1,0 +1,172 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.LinkList>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.Blocks;
+@using Umbraco.Cms.Core.Models;
+@using System.Text.RegularExpressions;
+
+@{
+    if (Model == null)
+        return;
+
+    string homeUrl = Umbraco.ContentAtRoot()?.FirstOrDefault()?.Url() ?? "";
+    string imagesClass = (Model.Images?.Any() ?? false) ? "" : "no-images";
+    
+    <main id="link-list" class="main" role="main">
+        <div class="content-col @imagesClass">
+            <a href="@homeUrl">
+                <img class="logo" src="/images/logo.svg">
+            </a>
+            <a href="@Model.Parent?.Url()" class="btn-back">
+                <img src="/images/icons/back-arrow.svg" />
+            </a>
+            <div class="content">
+                @if (!string.IsNullOrWhiteSpace(Model.Title))
+                {
+                    <h1>@Model.Title</h1>
+                }
+
+                @if (Model.Buttons?.Any() ?? false)
+                {
+                    int index = 1;
+
+                    <div id="link-list-items" class="link-list-items">
+                        @foreach (BlockListItem block in Model.Buttons)
+                        {
+                            LinkItm linkItm = block.Content as LinkItm ?? null;
+                            PopupItm popupItm = block.Content as PopupItm ?? null;
+                            VideoPopupItm videoPopupItm = block.Content as VideoPopupItm ?? null;
+
+                            if (linkItm != null)
+                            {
+                                <a href="@linkItm.Link?.Url()" class="link-list-item">
+                                    @linkItm.Text
+
+                                    <div class="link-arrow">
+                                        <img src="/images/icons/back-arrow.svg" />
+                                    </div>
+                                </a>
+                            }
+                            else if (popupItm != null || videoPopupItm != null)
+                            {
+                                <button type="button" class="link-list-item" data-bs-toggle="modal" data-bs-target="#link-list-popup-@index">
+                                    @(videoPopupItm != null ? videoPopupItm.Text : popupItm.Text)
+
+                                    <div class="link-arrow">
+                                        <img src="/images/icons/back-arrow.svg" />
+                                    </div>
+                                </button>
+                            }
+
+                            index++;
+                        }
+                    </div>
+
+                    <div class="container">
+                        <div class="row justify-content-between mt-4">
+                            <button id="prev-list" class="btn">Prev</button>
+                            <button id="next-list" class="btn">Next</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        @if (Model.Images?.Any() ?? false)
+        {
+            <div class="image-col">
+                <div class="image-grid images-@Model.Images.Count()">
+                    @foreach (MediaWithCrops image in Model.Images)
+                    {
+                        <img src="@image.Url()">
+                    }
+                </div>
+            </div>
+        }
+    </main>
+
+    @if (Model.Buttons?.Any() ?? false)
+    {
+        int index = 1;
+
+        foreach (BlockListItem block in Model.Buttons)
+        {
+            PopupItm popupItm = block.Content as PopupItm ?? null;
+            VideoPopupItm videoPopupItm = block.Content as VideoPopupItm ?? null;
+            string videoClass = videoPopupItm != null ? "video-modal" : "";
+
+            if (popupItm != null || videoPopupItm != null)
+            {
+                <div class="modal fade @videoClass" id="link-list-popup-@index" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    @*<div class="modal-dialog modal-fullscreen modal-dialog-scrollable">*@
+                    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="btn-close-wrapper"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                            </div>
+
+                            @if (popupItm != null)
+                            {
+                                <div class="modal-body">
+                                    <h2 class="modal-title">@(videoPopupItm != null ? videoPopupItm.Text : popupItm.Text)</h2>
+
+                                    @Html.Raw(popupItm.BodyText)
+                                </div>
+                            }
+                            else if (videoPopupItm != null && !string.IsNullOrWhiteSpace(videoPopupItm.VideoUrl))
+                            {
+                                bool isVimeo = videoPopupItm.VideoUrl.ToLower().Contains("vimeo");
+                                string provider = isVimeo ? "vimeo" : "youtube";
+                                string videoId = GetVideoIdFromUrl(videoPopupItm.VideoUrl, isVimeo);
+
+                                <div class="modal-body p-0 video-wrapper">
+                                    <div class="ratio ratio-21x9" id="player" data-videoid="@videoId">
+                                    </div>
+                                </div>
+                                //<div class="modal-footer">
+                                //    <button type="button" class="btn-dark" id="playBtn">Play</button>
+                                //    <button type="button" class="btn-dark" id="pauseBtn">Pause</button>
+                                //</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+
+            index++;
+        }
+    }
+}
+
+@{
+    static string GetVideoIdFromUrl(string url, bool isVimeo)
+    {
+        if (url.StartsWith("https://"))
+        {
+            if (url.Contains("youtu.be"))
+            {
+                Regex ytRegex = new Regex(@"youtu\.be\/([^\/]*)[\/]?");
+                Match ytMatch = ytRegex.Match(url);
+                if (ytMatch.Success)
+                    return ytMatch.Groups[1].Value.Split('?')[0];
+                else
+                    return url;
+            }
+
+            Regex regex = isVimeo ? new Regex(@"vimeo\.com\/(\d+)") : new Regex(@"v=([a-zA-Z0-9_-]+)");
+            Match match = regex.Match(url);
+
+            if (match.Success)
+            {
+                return match.Groups[1].Value;
+            }
+            else
+            {
+                return url;
+            }
+        }
+        else
+        {
+            return url;
+        }
+    }
+}

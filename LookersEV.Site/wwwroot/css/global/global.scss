@@ -1,0 +1,35 @@
+﻿@import "variables";
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: new-rubrik, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: $clr-purple;
+    display: flex;
+    /*touch-action: none;*/
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    a {
+        color: white;
+        font-weight: bold;
+    }
+}
+
+/*.bg-main {
+    background-color: $clr-purple;*/
+    /*background-image: linear-gradient(to bottom, $clr-purple-dark, $clr-purple);*/
+    /*background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/

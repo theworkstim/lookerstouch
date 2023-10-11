@@ -1,0 +1,12 @@
+<div ng-controller="UmbracoForms.SettingTypes.RichTextController as vm" data-umb-setting-alias="{{setting.alias}}" class="umb-forms-setting-type-rich-text">
+  <div ng-if="!vm.loading">
+    <umb-property-editor model="vm.htmlfield"
+                         ng-if="vm.htmlAvailable"
+                         ng-attr-readonly="{{setting.isReadOnly || undefined}}"></umb-property-editor>
+    <div class="umb-forms-settings-note umb-forms-settings-note-warning" ng-if="!vm.htmlAvailable">
+      <localize key="formEdit_fieldTypeRichTextNotAvailable"></localize>
+      <a href="https://docs.umbraco.com/umbraco-forms/developer/configuration#rich-text-field-type-configuration" target="_blank"><localize key="formEdit_fieldTypeRichTextNotAvailableLinkText"></localize></a>
+    </div>
+    <textarea ng-show="!vm.htmlAvailable" ng-model="setting.value" rows="5"></textarea>
+  </div>
+</div>

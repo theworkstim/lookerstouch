@@ -1,0 +1,24 @@
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\bin\Release\net6.0\Umbraco.PublishedModels.deps.json
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\bin\Release\net6.0\Umbraco.PublishedModels.dll
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\bin\Release\net6.0\Umbraco.PublishedModels.pdb
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.csproj.AssemblyReference.cache
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.AssemblyInfoInputs.cache
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.AssemblyInfo.cs
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.csproj.CoreCompileInputs.cache
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.dll
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\obj\Release\net6.0\refint\Umbraco.PublishedModels.dll
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.pdb
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Lookers EV\Umbraco.PublishedModels\obj\Release\net6.0\ref\Umbraco.PublishedModels.dll
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\bin\Release\net6.0\Umbraco.PublishedModels.deps.json
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\bin\Release\net6.0\Umbraco.PublishedModels.dll
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\bin\Release\net6.0\Umbraco.PublishedModels.pdb
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.csproj.AssemblyReference.cache
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.AssemblyInfoInputs.cache
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.AssemblyInfo.cs
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.csproj.CoreCompileInputs.cache
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.dll
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\obj\Release\net6.0\refint\Umbraco.PublishedModels.dll
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\obj\Release\net6.0\Umbraco.PublishedModels.pdb
+C:\Users\tim\OneDrive - The Works\Documents\GitHub\lookerstouch\Umbraco.PublishedModels\obj\Release\net6.0\ref\Umbraco.PublishedModels.dll
